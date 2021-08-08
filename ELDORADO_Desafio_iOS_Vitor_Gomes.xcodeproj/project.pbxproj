@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E77486C126BF35020095E6CC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77486C026BF35020095E6CC /* HomeViewController.swift */; };
+		E77486C326BF35BB0095E6CC /* RepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77486C226BF35BB0095E6CC /* RepoViewController.swift */; };
+		E77486CA26BF420E0095E6CC /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77486C926BF420E0095E6CC /* Repository.swift */; };
+		E77486CD26BF45220095E6CC /* Webservices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77486CC26BF45220095E6CC /* Webservices.swift */; };
+		E77486D026BF52300095E6CC /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77486CF26BF52300095E6CC /* RepositoryViewModel.swift */; };
 		E7BA879026BE3F5D007930D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BA878F26BE3F5D007930D6 /* AppDelegate.swift */; };
 		E7BA879226BE3F5D007930D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BA879126BE3F5D007930D6 /* SceneDelegate.swift */; };
-		E7BA879426BE3F5D007930D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BA879326BE3F5D007930D6 /* ViewController.swift */; };
 		E7BA879726BE3F5D007930D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7BA879526BE3F5D007930D6 /* Main.storyboard */; };
 		E7BA879A26BE3F5D007930D6 /* ELDORADO_Desafio_iOS_Vitor_Gomes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7BA879826BE3F5D007930D6 /* ELDORADO_Desafio_iOS_Vitor_Gomes.xcdatamodeld */; };
 		E7BA879C26BE3F60007930D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7BA879B26BE3F60007930D6 /* Assets.xcassets */; };
@@ -36,10 +40,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E77486C026BF35020095E6CC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E77486C226BF35BB0095E6CC /* RepoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoViewController.swift; sourceTree = "<group>"; };
+		E77486C926BF420E0095E6CC /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		E77486CC26BF45220095E6CC /* Webservices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservices.swift; sourceTree = "<group>"; };
+		E77486CF26BF52300095E6CC /* RepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
 		E7BA878C26BE3F5D007930D6 /* ELDORADO_Desafio_iOS_Vitor_Gomes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ELDORADO_Desafio_iOS_Vitor_Gomes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7BA878F26BE3F5D007930D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7BA879126BE3F5D007930D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E7BA879326BE3F5D007930D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E7BA879626BE3F5D007930D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E7BA879926BE3F5D007930D6 /* ELDORADO_Desafio_iOS_Vitor_Gomes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ELDORADO_Desafio_iOS_Vitor_Gomes.xcdatamodel; sourceTree = "<group>"; };
 		E7BA879B26BE3F60007930D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,6 +86,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E77486BF26BF34DE0095E6CC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E77486C026BF35020095E6CC /* HomeViewController.swift */,
+				E77486C226BF35BB0095E6CC /* RepoViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E77486C426BF37A80095E6CC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E7BA879526BE3F5D007930D6 /* Main.storyboard */,
+				E7BA879D26BE3F60007930D6 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E77486C526BF40630095E6CC /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				E7BA878F26BE3F5D007930D6 /* AppDelegate.swift */,
+				E7BA879126BE3F5D007930D6 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		E77486C626BF407D0095E6CC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E77486C926BF420E0095E6CC /* Repository.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E77486CB26BF45050095E6CC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E77486CC26BF45220095E6CC /* Webservices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E77486CE26BF51F70095E6CC /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				E77486CF26BF52300095E6CC /* RepositoryViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
 		E7BA878326BE3F5D007930D6 = {
 			isa = PBXGroup;
 			children = (
@@ -101,12 +160,13 @@
 		E7BA878E26BE3F5D007930D6 /* ELDORADO_Desafio_iOS_Vitor_Gomes */ = {
 			isa = PBXGroup;
 			children = (
-				E7BA878F26BE3F5D007930D6 /* AppDelegate.swift */,
-				E7BA879126BE3F5D007930D6 /* SceneDelegate.swift */,
-				E7BA879326BE3F5D007930D6 /* ViewController.swift */,
-				E7BA879526BE3F5D007930D6 /* Main.storyboard */,
+				E77486CE26BF51F70095E6CC /* View Models */,
+				E77486CB26BF45050095E6CC /* Services */,
+				E77486C626BF407D0095E6CC /* Models */,
+				E77486BF26BF34DE0095E6CC /* Controllers */,
+				E77486C526BF40630095E6CC /* Delegates */,
+				E77486C426BF37A80095E6CC /* Views */,
 				E7BA879B26BE3F60007930D6 /* Assets.xcassets */,
-				E7BA879D26BE3F60007930D6 /* LaunchScreen.storyboard */,
 				E7BA87A026BE3F60007930D6 /* Info.plist */,
 				E7BA879826BE3F5D007930D6 /* ELDORADO_Desafio_iOS_Vitor_Gomes.xcdatamodeld */,
 			);
@@ -261,10 +321,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E77486D026BF52300095E6CC /* RepositoryViewModel.swift in Sources */,
+				E77486CD26BF45220095E6CC /* Webservices.swift in Sources */,
 				E7BA879A26BE3F5D007930D6 /* ELDORADO_Desafio_iOS_Vitor_Gomes.xcdatamodeld in Sources */,
-				E7BA879426BE3F5D007930D6 /* ViewController.swift in Sources */,
 				E7BA879026BE3F5D007930D6 /* AppDelegate.swift in Sources */,
 				E7BA879226BE3F5D007930D6 /* SceneDelegate.swift in Sources */,
+				E77486C326BF35BB0095E6CC /* RepoViewController.swift in Sources */,
+				E77486C126BF35020095E6CC /* HomeViewController.swift in Sources */,
+				E77486CA26BF420E0095E6CC /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

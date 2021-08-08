@@ -11,7 +11,7 @@
         <!--Desafio iOS-->
         <scene sceneID="GMf-pY-zqf">
             <objects>
-                <viewController id="Ljn-7o-Vpf" sceneMemberID="viewController">
+                <viewController id="Ljn-7o-Vpf" customClass="HomeViewController" customModule="ELDORADO_Desafio_iOS_Vitor_Gomes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UYY-hu-bar">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="144" width="414" height="752"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="01H-Rh-hSi">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="repositoriesCell" id="01H-Rh-hSi">
                                         <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="01H-Rh-hSi" id="Dek-EE-V7h">
@@ -36,6 +36,9 @@
                                     <segment title="Repo List"/>
                                     <segment title="Saved Repo"/>
                                 </segments>
+                                <connections>
+                                    <action selector="changeList:" destination="Ljn-7o-Vpf" eventType="valueChanged" id="xgz-aw-Sze"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="A8e-Pg-dWB"/>
@@ -49,13 +52,11 @@
                             <constraint firstItem="zUv-vx-1RP" firstAttribute="top" secondItem="WVC-vi-4KL" secondAttribute="bottom" constant="5" id="lnn-2I-WtI"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Desafio iOS" id="BBi-Nv-ykr">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="70A-7i-mTF">
-                            <connections>
-                                <segue destination="XYk-h4-8Mj" kind="show" id="N46-wd-HeG"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Desafio iOS" id="BBi-Nv-ykr"/>
+                    <connections>
+                        <outlet property="repoSc" destination="WVC-vi-4KL" id="BBf-oQ-gzA"/>
+                        <outlet property="repoTv" destination="zUv-vx-1RP" id="aMD-GF-82p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CBN-r9-VV0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -64,7 +65,7 @@
         <!--Repository Details-->
         <scene sceneID="fQH-3O-woa">
             <objects>
-                <viewController id="XYk-h4-8Mj" sceneMemberID="viewController">
+                <viewController id="XYk-h4-8Mj" customClass="RepoViewController" customModule="ELDORADO_Desafio_iOS_Vitor_Gomes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H0d-Pe-tdt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,7 +80,7 @@
                                 <rect key="frame" x="0.0" y="341" width="414" height="555"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="qkw-tf-Fpz">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pullsCell" id="qkw-tf-Fpz">
                                         <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qkw-tf-Fpz" id="bHc-2a-edX">
@@ -189,10 +190,19 @@
                     <navigationItem key="navigationItem" title="Repository Details" id="7RE-dj-tnK">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="Nc5-o3-Vkg"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="repoForksLb" destination="50s-hd-bRG" id="tjK-z8-xal"/>
+                        <outlet property="repoIDLb" destination="WtR-bb-xhd" id="Dgn-Cg-9Oc"/>
+                        <outlet property="repoNameLb" destination="wjA-3c-7nh" id="Rs4-oT-qgs"/>
+                        <outlet property="repoOwnerLb" destination="27G-Pm-Q6Z" id="vWW-yu-GaG"/>
+                        <outlet property="repoPullsTv" destination="hZ4-Im-siH" id="yEZ-Vh-nQR"/>
+                        <outlet property="repoWatchersLb" destination="mPj-mc-0n6" id="4A5-gm-uZE"/>
+                        <outlet property="saveRemoveBt" destination="Nc5-o3-Vkg" id="EGS-dc-h7a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EdO-Kf-Yzj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2315.9420289855075" y="2.6785714285714284"/>
+            <point key="canvasLocation" x="3310" y="3"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hTt-4G-GLe">
@@ -211,6 +221,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2hM-A6-j8L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="479.71014492753625" y="2.6785714285714284"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0Qz-BO-mPJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4hr-f9-A92" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cVq-bg-K66">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XYk-h4-8Mj" kind="relationship" relationship="rootViewController" id="0pi-de-UjT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BJ5-oY-avN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2387" y="3"/>
         </scene>
     </scenes>
     <resources>
