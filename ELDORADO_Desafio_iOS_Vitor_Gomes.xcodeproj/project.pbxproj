@@ -14,6 +14,7 @@
 		E77486CA26BF420E0095E6CC /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77486C926BF420E0095E6CC /* Repository.swift */; };
 		E77486CD26BF45220095E6CC /* Webservices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77486CC26BF45220095E6CC /* Webservices.swift */; };
 		E77486D026BF52300095E6CC /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77486CF26BF52300095E6CC /* RepositoryViewModel.swift */; };
+		E78C533F26C0F5E40025F496 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78C533E26C0F5E40025F496 /* CoreDataManager.swift */; };
 		E7BA879026BE3F5D007930D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BA878F26BE3F5D007930D6 /* AppDelegate.swift */; };
 		E7BA879226BE3F5D007930D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BA879126BE3F5D007930D6 /* SceneDelegate.swift */; };
 		E7BA879726BE3F5D007930D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7BA879526BE3F5D007930D6 /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		E77486C926BF420E0095E6CC /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		E77486CC26BF45220095E6CC /* Webservices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservices.swift; sourceTree = "<group>"; };
 		E77486CF26BF52300095E6CC /* RepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
+		E78C533E26C0F5E40025F496 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		E7BA878C26BE3F5D007930D6 /* ELDORADO_Desafio_iOS_Vitor_Gomes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ELDORADO_Desafio_iOS_Vitor_Gomes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7BA878F26BE3F5D007930D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7BA879126BE3F5D007930D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				E7BA879B26BE3F60007930D6 /* Assets.xcassets */,
 				E7BA87A026BE3F60007930D6 /* Info.plist */,
 				E7BA879826BE3F5D007930D6 /* ELDORADO_Desafio_iOS_Vitor_Gomes.xcdatamodeld */,
+				E78C533E26C0F5E40025F496 /* CoreDataManager.swift */,
 			);
 			path = ELDORADO_Desafio_iOS_Vitor_Gomes;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				E77486C326BF35BB0095E6CC /* RepoViewController.swift in Sources */,
 				E77486C126BF35020095E6CC /* HomeViewController.swift in Sources */,
 				E77486CA26BF420E0095E6CC /* Repository.swift in Sources */,
+				E78C533F26C0F5E40025F496 /* CoreDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

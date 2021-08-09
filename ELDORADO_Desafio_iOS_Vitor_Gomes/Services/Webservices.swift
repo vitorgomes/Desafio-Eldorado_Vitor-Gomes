@@ -18,7 +18,7 @@ class Webservices {
                 completion(nil)
             } else if let data = data {
                 
-                let repositoryList = try? JSONDecoder().decode(RepositoryList.self, from: data)
+                let repositoryList = try? JSONDecoder().decode(RepositoryList.self, from: data) // Treat better
 
                 if let repositoryList = repositoryList {
                     completion(repositoryList.items)
@@ -39,7 +39,7 @@ class Webservices {
                 completion(nil)
             } else if let data = data {
                 
-                let pullList = try? JSONDecoder().decode([Pull].self, from: data)
+                let pullList = try? JSONDecoder().decode([Pull].self, from: data) // Treat better
 
                 if let pullList = pullList {
                     completion(pullList)

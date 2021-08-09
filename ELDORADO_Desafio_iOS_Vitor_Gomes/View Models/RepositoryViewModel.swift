@@ -6,9 +6,13 @@
 //
 
 import Foundation
+import CoreData
 
 struct RepositoryListViewModel {
+    
     let repositories: [Item]
+    var repo: [RepoViewModel] = [] // Check if it is righ
+    
 }
 
 extension RepositoryListViewModel {
@@ -25,6 +29,11 @@ extension RepositoryListViewModel {
         let repository = self.repositories[index]
         return RepositoryViewModel(repository)
     }
+    
+    mutating func getAllRepo() {
+         repo = CoreDataManager.shared.getAllRepo().map(RepoViewModel.init) //Check if it is right
+    }
+    
 }
 
 struct RepositoryViewModel {
@@ -32,6 +41,7 @@ struct RepositoryViewModel {
 }
 
 extension RepositoryViewModel {
+    
     init(_ repository: Item) {
         self.repository = repository
     }
@@ -55,4 +65,31 @@ extension RepositoryViewModel {
     var watchers: Int {
         return self.repository.watchers
     }
+}
+
+// Check if it is right (all code bellow)
+struct RepoViewModel {
+    
+    let repo: Repo
+
+    var id: Int32 {
+        return repo.id
+    }
+
+    var name: String {
+        return repo.name ?? ""
+    }
+    
+    var owner: String {
+        return repo.owner ?? ""
+    }
+    
+    var forks: Int32 {
+        return repo.forks
+    }
+    
+    var watchers: Int32 {
+        return repo.watchers
+    }
+    
 }

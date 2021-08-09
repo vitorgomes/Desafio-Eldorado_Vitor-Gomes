@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class RepoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -69,6 +70,15 @@ class RepoViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: - Actions
     
     @IBAction func saveRemove(_ sender: UIBarButtonItem) {
+        
+        // Need to be checked
+        pullListVM.name = repoNameLb.text!
+        pullListVM.id = Int(repoIDLb.text!)!
+        pullListVM.owner = repoOwnerLb.text!
+        pullListVM.forks = Int(repoForksLb.text!)!
+        pullListVM.watchers = Int(repoWatchersLb.text!)!
+        
+        pullListVM.save()
     }
     
     @IBAction func done(_ sender: UIBarButtonItem) {

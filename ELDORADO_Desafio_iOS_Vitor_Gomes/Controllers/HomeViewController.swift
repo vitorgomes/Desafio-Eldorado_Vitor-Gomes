@@ -6,10 +6,7 @@
 //
 
 import UIKit
-
-//protocol HomeViewControllerDelegate {
-//    func homeViewControllerDidSelect(repository: Item, controller: UIViewController)
-//}
+import CoreData
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -36,13 +33,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: - Actions
     
     @IBAction func changeList(_ sender: UISegmentedControl) {
-        
-        if repoSc.selectedSegmentIndex == 0 {
-            // Repo List
-        } else {
-            // Saved Repo
-        }
-        
+        self.repoTv.reloadData()
     }
     
     // MARK: - Functions
@@ -90,19 +81,35 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.repositoryListVM.numberOfRowsInSection(section)
+        
+        let selectedIndex = self.repoSc.selectedSegmentIndex // move to viewmodel?
+        
+        if selectedIndex == 0 {
+            return self.repositoryListVM.numberOfRowsInSection(section)
+        } else {
+            return 1 // hard code for testing purposes, while coredata is not fully implemented yet
+        }
+
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let selectedIndex = self.repoSc.selectedSegmentIndex // move to viewmodel?
         let cell = repoTv.dequeueReusableCell(withIdentifier: "repositoriesCell", for: indexPath) as UITableViewCell
         
-        let repoVM = self.repositoryListVM.repositoryAtIndex(indexPath.row)
-        
-        cell.textLabel?.text = repoVM.name
-        
-        return cell
-        
+        if selectedIndex == 0 {
+            
+            let repoVM = self.repositoryListVM.repositoryAtIndex(indexPath.row)
+            
+            cell.textLabel?.text = repoVM.name
+            
+            return cell
+            
+        } else {
+            cell.textLabel?.text = "1" // hard code for testing purposes, while coredata is not fully implemented yet
+            return cell
+        }
+
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
