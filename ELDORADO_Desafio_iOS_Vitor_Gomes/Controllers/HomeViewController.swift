@@ -7,12 +7,22 @@
 
 import UIKit
 
+//protocol HomeViewControllerDelegate {
+//    func homeViewControllerDidSelect(repository: Item, controller: UIViewController)
+//}
+
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    // MARK: - Variables and Constants
+    
     private var repositoryListVM: RepositoryListViewModel!
+    
+    // MARK: - Outlets
     
     @IBOutlet weak var repoSc: UISegmentedControl!
     @IBOutlet weak var repoTv: UITableView!
+    
+    // MARK: - ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +33,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         setup()
     }
     
+    // MARK: - Actions
+    
     @IBAction func changeList(_ sender: UISegmentedControl) {
         
         if repoSc.selectedSegmentIndex == 0 {
@@ -32,6 +44,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
     }
+    
+    // MARK: - Functions
     
     private func setup() {
         
@@ -50,6 +64,26 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let navC = segue.destination as? UINavigationController, let repoViewController = navC.viewControllers.first as? RepoViewController {
+            
+            let indexPath = repoTv.indexPathForSelectedRow?.row
+            let sendingRepo = self.repositoryListVM.repositoryAtIndex(indexPath!)
+            
+            navC.modalPresentationStyle = .fullScreen
+            
+            repoViewController.receivedID = sendingRepo.id
+            repoViewController.receivedName = sendingRepo.name
+            repoViewController.receivedOwner = sendingRepo.owner
+            repoViewController.receivedForks = sendingRepo.forks
+            repoViewController.receivedWatchers = sendingRepo.watchers
+        }
+        
+    }
+    
+    // MARK: - TableView methods
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.repositoryListVM == nil ? 0 : self.repositoryListVM.numberOfSections
@@ -72,7 +106,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
+        repoTv.deselectRow(at: indexPath, animated: true)
     }
     
 }

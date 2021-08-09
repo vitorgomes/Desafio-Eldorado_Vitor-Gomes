@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct Pull: Decodable {
+    
+    let title: String
+    
+}

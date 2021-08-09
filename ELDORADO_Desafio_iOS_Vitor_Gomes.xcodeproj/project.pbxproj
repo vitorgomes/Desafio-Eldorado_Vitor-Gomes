@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E76799D626C08C0E000A5631 /* Pull.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76799D526C08C0E000A5631 /* Pull.swift */; };
+		E76799D826C08EFF000A5631 /* PullViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76799D726C08EFF000A5631 /* PullViewModel.swift */; };
 		E77486C126BF35020095E6CC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77486C026BF35020095E6CC /* HomeViewController.swift */; };
 		E77486C326BF35BB0095E6CC /* RepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77486C226BF35BB0095E6CC /* RepoViewController.swift */; };
 		E77486CA26BF420E0095E6CC /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77486C926BF420E0095E6CC /* Repository.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E76799D526C08C0E000A5631 /* Pull.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pull.swift; sourceTree = "<group>"; };
+		E76799D726C08EFF000A5631 /* PullViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullViewModel.swift; sourceTree = "<group>"; };
 		E77486C026BF35020095E6CC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E77486C226BF35BB0095E6CC /* RepoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoViewController.swift; sourceTree = "<group>"; };
 		E77486C926BF420E0095E6CC /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				E77486C926BF420E0095E6CC /* Repository.swift */,
+				E76799D526C08C0E000A5631 /* Pull.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -133,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				E77486CF26BF52300095E6CC /* RepositoryViewModel.swift */,
+				E76799D726C08EFF000A5631 /* PullViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -322,9 +328,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E77486D026BF52300095E6CC /* RepositoryViewModel.swift in Sources */,
+				E76799D826C08EFF000A5631 /* PullViewModel.swift in Sources */,
 				E77486CD26BF45220095E6CC /* Webservices.swift in Sources */,
 				E7BA879A26BE3F5D007930D6 /* ELDORADO_Desafio_iOS_Vitor_Gomes.xcdatamodeld in Sources */,
 				E7BA879026BE3F5D007930D6 /* AppDelegate.swift in Sources */,
+				E76799D626C08C0E000A5631 /* Pull.swift in Sources */,
 				E7BA879226BE3F5D007930D6 /* SceneDelegate.swift in Sources */,
 				E77486C326BF35BB0095E6CC /* RepoViewController.swift in Sources */,
 				E77486C126BF35020095E6CC /* HomeViewController.swift in Sources */,

@@ -24,7 +24,27 @@ class Webservices {
                     completion(repositoryList.items)
                 }
                 
-                print(repositoryList?.items) // Remove later
+            }
+            
+        }.resume()
+        
+    }
+    
+    func getPulls(url: URL, completion: @escaping ([Pull]?) -> ()) {
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            
+            if let error = error {
+                print(error.localizedDescription)
+                completion(nil)
+            } else if let data = data {
+                
+                let pullList = try? JSONDecoder().decode([Pull].self, from: data)
+
+                if let pullList = pullList {
+                    completion(pullList)
+                }
+                
             }
             
         }.resume()

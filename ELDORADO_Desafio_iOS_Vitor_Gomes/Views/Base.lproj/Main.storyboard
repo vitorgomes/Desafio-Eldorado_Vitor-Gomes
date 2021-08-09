@@ -27,6 +27,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="4hr-f9-A92" kind="show" id="5Fy-bY-8ha"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -76,7 +79,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hZ4-Im-siH">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hZ4-Im-siH">
                                 <rect key="frame" x="0.0" y="341" width="414" height="555"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -188,7 +191,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Repository Details" id="7RE-dj-tnK">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="Nc5-o3-Vkg"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="CLh-Y6-7Si">
+                            <connections>
+                                <action selector="done:" destination="XYk-h4-8Mj" id="Iaf-XH-FJ1"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="Nc5-o3-Vkg">
+                            <connections>
+                                <action selector="saveRemove:" destination="XYk-h4-8Mj" id="oUk-R7-KvA"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="repoForksLb" destination="50s-hd-bRG" id="tjK-z8-xal"/>
@@ -227,6 +239,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4hr-f9-A92" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="noB-VG-JYb"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cVq-bg-K66">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
